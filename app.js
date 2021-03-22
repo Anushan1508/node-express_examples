@@ -1,11 +1,23 @@
-const http = require('http')
-const port = 5000;
+const { readFile } = require('fs')
+const { reject } = require('lodash')
+const { resolve } = require('path')
 
-const server = http.createServer((req, res) => {
-    console.log('request event')
-    res.end('Hello World')
-})
+const getText = (path) => {
+    return new Promise((resolve, reject) => {
+        readFile(path, 'utf8', (err, data) => {
+            if (err) {
+                reject(err)
+                return
+            }
+            else {
+                resolve(data)
+            }
+        })
+    })
+}
 
-server.listen(port, () => {
-    console.log(`server listening on port : ${port}....`)
-})
+getText('./content/first.txt')
+.then(result => console.log(result))
+.catch((err) => console.log(err))
+
+
