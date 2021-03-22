@@ -6,6 +6,6 @@
 // process      - info about env where the program is being excuted
 
 console.log(__dirname)
- setInterval(()=> {
-     console.log('Hello Node')
- }, 500);
+setInterval(() => {
+    console.log('Hello Node')
+}, 500);

@@ -1,8 +1,8 @@
 // Local
-const thenu ='thenu'
+const thenu = 'thenu'
 
 // Share
 const vithu = 'vithu'
-const tharuni ='tharuni'
+const tharuni = 'tharuni'
 
-module.exports = {vithu, tharuni }
+module.exports = { vithu, tharuni }
